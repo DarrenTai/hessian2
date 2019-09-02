@@ -75,7 +75,7 @@ func NewHessianCodecBy(reader *bufio.Reader, bodyLen int, pkgType PackageType) *
 	return &HessianCodec{
 		reader: reader,
 		bodyLen: bodyLen,
-		pkgType: pkgType
+		pkgType: pkgType,
 	}
 }
 
