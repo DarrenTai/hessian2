@@ -71,6 +71,14 @@ func NewHessianCodec(reader *bufio.Reader) *HessianCodec {
 	}
 }
 
+func NewHessianCodecBy(reader *bufio.Reader, bodyLen int, pkgType PackageType) *HessianCodec {
+	return &HessianCodec{
+		reader: reader,
+		bodyLen: bodyLen,
+		pkgType: pkgType
+	}
+}
+
 func (h *HessianCodec) Write(service Service, header DubboHeader, body interface{}) ([]byte, error) {
 	switch header.Type {
 	case PackageHeartbeat:
